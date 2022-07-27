@@ -1,8 +1,8 @@
 {
-  "name": "scssMasterAssignment",
+  "name": "scssMaster",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/rojaebl/scssMastserAssignment1",
+  "repository": "https://github.com/rojaebl/scssMastser",
   "author": "RoJaebl <qgs0924@gmail.com>",
   "license": "MIT",
   "scripts": {
