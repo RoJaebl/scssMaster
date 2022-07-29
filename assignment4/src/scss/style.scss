@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Yrsa:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Montserrat:wght@400;500&family=Yrsa:wght@400;500&display=swap");
+@import "_reset";
+@import "_variable";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Yrsa", "Montserrat", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(440px, 1fr));
+  grid-auto-rows: 440px;
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    padding: 20px;
+    line-height: 1.1;
+    span {
+      width: 80%;
+      text-align: center;
+      font-family: "Montserrat";
+      font-weight: 500;
+      &:first-child {
+        font-size: 23px;
+      }
+    }
+    background-size: cover;
+    background-position: center center;
+    &:hover {
+      span {
+        opacity: 0;
+      }
+    }
+    cursor: pointer;
+    $backColors: (
+      1: #bfbda7,
+      2: #5f5fa9,
+      3: #fe4714,
+      4: #897330,
+      5: #847e96,
+      6: #d0ff71,
+      7: #993333,
+      8: #3aaafa,
+      9: #8a8af5,
+      10: #41907a,
+      11: #d8d1d1,
+      12: #e3c4e5,
+    );
+    @include backColor($backColors);
+    $notBackColors: (
+      2: #5f5fa9,
+      4: #897330,
+      9: #8a8af5,
+      11: #d8d1d1,
+    );
+    @include notBackColor($notBackColors);
+  }
+}

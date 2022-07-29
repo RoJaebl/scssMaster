@@ -1,0 +1,27 @@
+@mixin backColor($backColors) {
+  @each $num, $backColor in $backColors {
+    &:nth-child(#{$num}) {
+      background-color: $backColor;
+      &:hover {
+        background-image: url("https://source.unsplash.com/random/#{$num}");
+      }
+    }
+  }
+}
+@mixin notBackColor($backColors) {
+  @each $num, $backColor in $backColors {
+    &:nth-child(#{$num}) {
+      background-image: url("https://source.unsplash.com/random/#{$num}");
+      span {
+        opacity: 0;
+      }
+      &:hover {
+        background-color: $backColor;
+        background-image: none;
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
