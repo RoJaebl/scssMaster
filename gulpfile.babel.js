@@ -16,23 +16,23 @@ const Sass = GulpSass(NodeSass);
 
 // Routes
 const routes = {
-  publish: "assignment6/build/**/*",
-  server: "assignment6/build/",
-  del: ["assignment6/build", ".publish"],
+  publish: "assignment7/build/**/*",
+  server: "assignment7/build/",
+  del: ["assignment7/build", ".publish"],
   img: {
-    watch: "assignment6/src/img/**/*.{jpg,png,gif,bmp,webp,svg,ai}",
-    src: "assignment6/src/img/*.{jpg,png,gif,bmp,webp,svg,ai}",
-    dest: "assignment6/build/img/",
+    watch: "assignment7/src/img/**/*.{jpg,png,gif,bmp,webp,svg,ai}",
+    src: "assignment7/src/img/*.{jpg,png,gif,bmp,webp,svg,ai}",
+    dest: "assignment7/build/img/",
   },
   scss: {
-    watch: "assignment6/src/scss/**/*.scss",
-    src: "assignment6/src/scss/style.scss",
-    dest: "assignment6/build/css/",
+    watch: "assignment7/src/scss/**/*.scss",
+    src: "assignment7/src/scss/style.scss",
+    dest: "assignment7/build/css/",
   },
   pug: {
-    watch: "assignment6/src/**/*.pug",
-    src: "assignment6/src/index.pug",
-    dest: "assignment6/build/",
+    watch: "assignment7/src/**/*.pug",
+    src: "assignment7/src/index.pug",
+    dest: "assignment7/build/",
   },
 };
 
