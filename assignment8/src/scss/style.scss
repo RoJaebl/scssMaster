@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Yrsa:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Montserrat:wght@400;500&family=Yrsa:wght@400;500&display=swap");
+@import "_reset";
+@import "_variable";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", "Yrsa", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  user-select: none;
+}
+main {
+  width: 55%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 150px;
+  padding: 10px;
+  overflow: scroll;
+  background-color: $backColor;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+  article {
+    width: 100%;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 50px 1fr 30%;
+    grid-template-rows: 100%;
+    background-color: $baseColor;
+    color: $baseColor;
+    border: 3px solid $baseColor;
+    border-top: 1.5px solid $baseColor;
+    border-bottom: 1.5px solid $baseColor;
+    &:first-child {
+      border-top: 3px solid $baseColor;
+    }
+    &:last-child {
+      border-bottom: 3px solid $baseColor;
+    }
+    gap: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    &:hover {
+      border-color: white;
+      background-color: white;
+      color: white;
+      border: 3px solid white;
+      .occupation {
+        border-color: white !important;
+      }
+      a {
+        background-color: white !important;
+        color: $backColor !important;
+      }
+    }
+    > div {
+      background-color: $backColor;
+    }
+    .category {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      @include spanWrapper("true") {
+      }
+    }
+    .author {
+      display: flex;
+      align-items: center;
+      padding-left: 5%;
+      font-size: 60px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .article-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .occupation {
+        padding: 5px;
+        border-bottom: 3px solid $baseColor;
+        @include spanWrapper("false") {
+          white-space: wrap;
+          text-align: center;
+        }
+      }
+      .occupation-info {
+        padding: 10px;
+        a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          color: $backColor;
+          background-color: $baseColor;
+          border-radius: 200px;
+          overflow: hidden;
+          padding: 5px;
+          @include spanWrapper("false") {
+          }
+          span:nth-child(2) {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.label {
+  width: 5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: clamp(10px, 3vw, 40px);
+  font-weight: 600;
+  .top,
+  .bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    span {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+    }
+  }
+  .top {
+    background-color: #ff00ff;
+  }
+  .center {
+    top: 50%;
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    background-image: url("https://ittalk.co.kr/wp-content/uploads/2018/10/Windows_10_logo.png");
+    background-size: cover;
+    background-position: center center;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .bottom {
+    background-color: #1900ff;
+    span {
+      &:first-child {
+        transform: rotateZ(180deg);
+      }
+      &:last-child {
+        width: 100%;
+        height: auto;
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+}
+
+.nav {
+  width: 40%;
+  height: 100vh;
+  padding: 15px;
+  font-weight: 600;
+  background-color: #ff0400;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+  .nav-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: 25px;
+    grid-auto-rows: 25px;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-size: 20px;
+    margin-bottom: 30px;
+    .item {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      div {
+        &:first-child {
+          width: 20px;
+          height: 20px;
+          border: 1px solid black;
+          border-radius: 100%;
+          margin-right: 5px;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        div {
+          background-color: black;
+        }
+      }
+    }
+  }
+  .nav-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: max-content;
+    gap: 15px;
+
+    .section {
+      width: 100%;
+      height: 100%;
+      border-top: 3px solid black;
+      overflow: hidden;
+      word-wrap: break-word;
+      margin-bottom: 20px;
+      h1 {
+        margin-top: 15px;
+        font-size: clamp(20px, 3vw, 40px);
+      }
+      h3 {
+        margin-top: 5px;
+        font-size: clamp(10px, 2vw, 20px);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .nav {
+    .nav-items {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .nav-section {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  }
+}
