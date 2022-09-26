@@ -1,0 +1,24 @@
+@mixin rotate($childNum, $childNChildNum, $rotate) {
+  div {
+    &:nth-child(#{$childNum}) {
+      span {
+        &:nth-child(#{$childNChildNum}) {
+          transform: rotate(#{$rotate});
+        }
+      }
+    }
+  }
+}
+
+@mixin itemStyle {
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  span {
+    &:hover {
+      background-color: #6c01ff;
+      cursor: pointer;
+    }
+  }
+}
