@@ -16,23 +16,23 @@ const Sass = GulpSass(NodeSass);
 
 // Routes
 const routes = {
-  publish: "build/**/*",
-  server: "build/",
-  del: ["build", ".publish"],
+  publish: "assignment2/build/**/*",
+  server: "assignment2/build/",
+  del: ["assignment2/build", ".publish"],
   img: {
-    watch: "src/img/**/*.{jpg,png,gif,bmp,webp,svg,ai}",
-    src: "src/img/*.{jpg,png,gif,bmp,webp,svg,ai}",
-    dest: "build/img/",
+    watch: "assignment2/src/img/**/*.{jpg,png,gif,bmp,webp,svg,ai}",
+    src: "assignment2/src/img/*.{jpg,png,gif,bmp,webp,svg,ai}",
+    dest: "assignment2/build/img/",
   },
   scss: {
-    watch: "src/scss/**/*.scss",
-    src: "src/scss/style.scss",
-    dest: "build/css/",
+    watch: "assignment2/src/scss/**/*.scss",
+    src: "assignment2/src/scss/style.scss",
+    dest: "assignment2/build/css/",
   },
   pug: {
-    watch: "src/**/*.pug",
-    src: "src/index.pug",
-    dest: "build/",
+    watch: "assignment2/src/**/*.pug",
+    src: "assignment2/src/index.pug",
+    dest: "assignment2/build/",
   },
 };
 
