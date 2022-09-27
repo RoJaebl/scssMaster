@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Yrsa:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Montserrat:wght@400;500&family=Yrsa:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @import "_reset";
 @import "_variable";
 @import "_elements";
@@ -7,84 +6,87 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-
-h1 {
-  font-size: 290px;
-  font-weight: 600;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 1000px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  box-shadow: 4px 4px 10px 0px darkgrey;
 }
-main {
-  display: grid;
-  width: 50%;
-  grid-template-columns: 1fr 1.5fr 1.2fr;
-  grid-template-rows: repeat(17, 75px);
-  gap: 20px;
-  background-color: #dde1d4;
-  padding: 20px;
-  header {
-    background-color: $bgColor_Black;
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1.2fr;
-    .text {
-      display: flex;
-      flex-direction: column;
-      font-size: 23px;
-      padding: 0px 0px 30px 25px;
-      align-self: flex-end;
-      line-height: 1.3;
-      &:last-child {
-        padding-left: 15px;
-      }
-    }
-  }
-  content,
-  nav,
-  footer {
-    background-color: $bgColor_Tomato;
-    color: black;
-  }
-
-  header {
-    grid-column: 1 /-1;
-    grid-row: 1 / 3;
-  }
-  content {
-    grid-column: 1/3;
-    grid-row: 3/11;
+header {
+  margin-top: 50px;
+  font-weight: 500;
+  width: 600px;
+  .title {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+    padding-bottom: 15px;
     h1 {
-      align-self: flex-end;
-    }
-  }
-  nav {
-    grid-column: -2 / -1;
-    grid-row: 3/11;
-  }
-  footer {
-    grid-column: 1/-1;
-    grid-row: -8/-1;
-    & *:not(h3) {
-      letter-spacing: -15px;
-    }
-    h1 {
-      margin-bottom: 60px;
+      font-size: 80px;
     }
     h3 {
-      color: white;
-      font-size: 50px;
-      font-weight: 600;
-      padding-left: 20px;
-      line-height: 1.3;
+      font-size: 30px;
+      align-self: flex-end;
+    }
+  }
+  .info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 4fr;
+    padding-top: 15px;
+    font-size: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    span {
+      justify-self: end;
+    }
+  }
+}
+
+main {
+  width: 600px;
+  height: 640px;
+  padding: 80px 0px 60px 0px;
+  .ellipses {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, 190px);
+    grid-template-rows: repeat(3, 190px);
+    justify-content: center;
+    .ellipse {
+      justify-self: center;
+      align-self: center;
+      width: 90%;
+      height: 90%;
+      border-radius: 100%;
+    }
+    :nth-child(1),
+    :nth-child(2),
+    :nth-child(3) {
+      background-color: #bae3f7;
+    }
+    :nth-child(4),
+    :nth-child(5),
+    :nth-child(6) {
+      background-color: #626365;
+    }
+    :nth-child(7),
+    :nth-child(8),
+    :nth-child(9) {
+      background-color: #00a467;
     }
   }
 }
