@@ -1,0 +1,16 @@
+@mixin article__item {
+  height: 50px;
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+}
+@mixin imgRandom($childCount) {
+  @for $childNum from 1 to $childCount {
+    &:nth-child(#{$childNum}) {
+      .img {
+        background-image: url("https://source.unsplash.com/random/#{$childNum}");
+      }
+    }
+  }
+}
