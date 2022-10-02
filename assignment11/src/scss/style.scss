@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Yrsa:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea&family=Montserrat:wght@400;500&family=Yrsa:wght@400;500&display=swap");
+@import "_reset";
+@import "_variable";
+@import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", "Yrsa", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: black;
+  font-weight: 500;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: black;
+  border: 4px solid black;
+  gap: 4px;
+  nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    .nav-title {
+      padding: 10px;
+      font-size: 20px;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+    .nav-sub-title {
+      padding: 10px;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .nav-menu {
+      top: 50%;
+      left: 0px;
+      width: 100%;
+      margin-bottom: 70px;
+      ul {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        li {
+          padding: 10px;
+          font-size: 20px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          &:hover {
+            background-color: #eeeeee;
+          }
+        }
+      }
+    }
+    .nav-info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      .nav-info__address {
+        display: flex;
+        flex-direction: column;
+        line-height: 25px;
+        .nav-info__address-title {
+          font-weight: 600;
+        }
+      }
+      .nav-info__languege {
+        display: flex;
+        > * {
+          margin-right: 10px;
+        }
+        .divide {
+          border-left: 2px solid black;
+        }
+      }
+    }
+  }
+  .home {
+    width: 100%;
+    height: 100%;
+    grid-column: 2/5;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 8fr 2fr;
+    background-color: black;
+    .home-main {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-right: 4px solid black;
+      border-bottom: 4px solid black;
+      .home-main__title {
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 60px;
+        text-transform: uppercase;
+      }
+      .home-main__sub-title {
+        padding: 10px;
+        font-size: 60px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .home-main__content {
+        width: 100%;
+        padding: 10px;
+        line-height: 20px;
+        font-size: 20px;
+        font-weight: 400;
+        > div {
+          margin-bottom: 60px;
+        }
+      }
+    }
+    .home-services {
+      grid-row: 2/-1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px;
+      padding-bottom: 20px;
+      border-right: 4px solid black;
+      .home-services__title {
+        text-transform: uppercase;
+      }
+      .home-services__sub-tilte {
+        font-weight: 500;
+        font-size: 30px;
+      }
+    }
+    article {
+      background-color: black;
+      display: grid;
+      gap: 4px;
+      &:nth-child(2) {
+        grid-column: 2 /-1;
+        grid-row: 1/-2;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        .img {
+          width: 100%;
+          height: 100%;
+          @include gridPos(1, 0, "1/4", "1/-1");
+          @include gridPos(2, 0, "4/-1", "1/5");
+          @include gridPos(3, 0, "4/-2", "5/7");
+          @include gridPos(4, 0, "6/-1", "5/6");
+          @include gridPos(5, 0, "6/-1", "6/7");
+          @include gridPos(6, 0, "4/-2", "7/-1");
+          @include gridPos(7, 0, "5/-1", "7/-1");
+        }
+      }
+      &:last-child {
+        grid-column: 2/-1;
+        grid-row: 2/-1;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        .img {
+          width: 100%;
+          height: 100%;
+          @include gridPos(1, 7, "1/2", "1/-1");
+          @include gridPos(2, 7, "2/3", "1/2");
+          @include gridPos(3, 7, "2/3", "2/-1");
+          @include gridPos(4, 7, "3/-1", "1/-1");
+        }
+      }
+    }
+  }
+}
+.img {
+  background-size: cover;
+}
+// $elements: (
+//   (1, 3, 4, false, 0),
+//   (2, 3, 2, false, 0),
+//   (3, 2, 0, false, 0),
+//   (4, 0, 0, true, 1),
+//   (5, 0, 0, true, 3),
+//   (6, 2, 2, false, 0)
+// );
+// @include gridAreaForm($elements);

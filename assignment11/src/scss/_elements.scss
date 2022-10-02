@@ -1,0 +1,7 @@
+@mixin gridPos($child, $imgOffset, $column, $row) {
+  &:nth-child(#{$child}) {
+    grid-column: #{$column};
+    grid-row: #{$row};
+    background-image: url("https://source.unsplash.com/random/#{$child + $imgOffset}");
+  }
+}
